@@ -40,6 +40,7 @@ header {
 .nav-links { display: flex; gap: 30px; list-style: none; }
 .nav-links a { color: var(--muted); transition: color .2s; }
 .nav-links a:hover { color: var(--text); }
+.menu-toggle, .menu-button { display: none; }
 
 .hero {
     align-items: center;
