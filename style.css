@@ -182,7 +182,39 @@ header {
 .footer p { color: var(--dim); font-size: 13px; text-align: center; }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; }
+    .navbar { position: relative; }
+    .menu-button {
+        cursor: pointer;
+        display: grid;
+        gap: 5px;
+        padding: 8px 0 8px 8px;
+    }
+    .menu-button span {
+        background: var(--muted);
+        display: block;
+        height: 2px;
+        transition: transform .2s, opacity .2s;
+        width: 25px;
+    }
+    .nav-links {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 8px;
+        position: absolute;
+        right: 20px;
+        top: 76px;
+        width: min(220px, calc(100vw - 40px));
+    }
+    .nav-links a { display: block; padding: 10px 12px; }
+    .nav-links a:hover { background: var(--accent); }
+    .menu-toggle:checked ~ .nav-links { display: flex; }
+    .menu-toggle:checked + .menu-button span:first-child { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle:checked + .menu-button span:nth-child(2) { opacity: 0; }
+    .menu-toggle:checked + .menu-button span:last-child { transform: translateY(-7px) rotate(-45deg); }
     .hero { padding-top: 150px; }
     .hero h1 { letter-spacing: -2px; }
     .about-content, .skills-grid, .projects-grid, .contact-content { grid-template-columns: 1fr; }
