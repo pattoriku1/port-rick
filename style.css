@@ -148,18 +148,6 @@ header {
 .project-card { overflow: hidden; transition: border-color .2s, transform .2s; }
 .project-link { cursor: pointer; }
 .project-link:hover { border-color: var(--dim); transform: translateY(-5px); }
-.project-link::after {
-    content: "View Project →";
-    display: block;
-    color: var(--dim);
-    font-size: 13px;
-    padding: 0 30px 22px;
-    transition: color .2s;
-}
-
-.project-link:hover::after {
-    color: var(--text);
-}
 
 .project-image, .project-placeholder { height: 220px; }
 .project-image { background: #212129; overflow: hidden; }
